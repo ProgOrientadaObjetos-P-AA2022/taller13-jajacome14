@@ -5,20 +5,39 @@
  */
 package p1;
 
+import p2.Matriculas;
+
 /**
  *
  * @author reroes
  */
-public class MatriculaMaternal {
+public class MatriculaMaternal extends Matriculas {
     private double tarifa;
-    
-        
-    public void establecerTarifa(){
+    private String nombre;
+
+    public void establecerNombre() {
+        nombre = "Matricula Maternal";
+    }
+
+    public void establecerTarifa() {
         // tarifa = costo desayunos + costo almuerzo + costo medico
         tarifa = 50.2 + 40.2 + 80.2;
     }
-        
-    public double obtenerTarifa(){
+
+    public double obtenerTarifa() {
         return tarifa;
+    }
+
+    public String obtenerNombre() {
+        return nombre;
+    }
+
+    @Override
+    public String toString(){
+        String cadena = String.format("%s - Tarifa: %.2f", 
+        obtenerNombre(),
+        obtenerTarifa());
+
+        return cadena;
     }
 }
